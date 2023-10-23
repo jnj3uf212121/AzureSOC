@@ -11,64 +11,29 @@ In this project, I build a mini honeynet in Azure and ingest log sources from va
 - SecurityIncident (Incidents created by Sentinel)
 - AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
 
-## Architecture Before Hardening / Security Controls
-![Architecture Diagram](https://i.imgur.com/aBDwnKb.jpg)
+## Azure Cloud, Virtual Machine & Active Directory Management:
+- Created, managed, monitored Azure accounts, subscriptions, virtual machines, and Azure AD.
+- Setup logging for Azure Active Directory (Microsoft Entra ID), enabling audit logs and signin logs.
+- Demonstrated expertise in networking, setting up Network Security Groups (NSGs), and ensuring correct VM traffic flow.
 
-## Architecture After Hardening / Security Controls
-![Architecture Diagram](https://i.imgur.com/YQNa9Pp.jpg)
+## Azure Security, Logging & Monitoring Configuration:
 
-The architecture of the mini honeynet in Azure consists of the following components:
+- Integrated SQL Server with Windows Event Viewer.
+- Established Azure Storage, configured blob diagnostics, and incorporated key vault instance logging.
+- Utilized Microsoft Defender for Cloud across VMs, storage accounts, and SQL instances.
 
-- Virtual Network (VNet)
-- Network Security Group (NSG)
-- Virtual Machines (2 windows, 1 linux)
-- Log Analytics Workspace
-- Azure Key Vault
-- Azure Storage Account
-- Microsoft Sentinel
+## Azure Sentinel & Log Analytics:
 
-For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
+- Set up Log Analytics Workspace and connected it to Azure Sentinel.
+- Uploaded Geo-Data files to Azure Storage and created geoip watchlist.
+- Utilized pre-built JSON maps to create visualization workbooks in Azure Sentinel, showcasing malicious traffic targeting resources.
+- Demonstrated proficiency in Kusto Query Language, crafting specialized queries for diverse scenarios.
 
-For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
+## Azure Sentinel Visualization & Map Creation:
 
-## Attack Maps Before Hardening / Security Controls
-![NSG Allowed Inbound Malicious Flows](https://i.imgur.com/1qvswSX.png)<br>
-![Linux Syslog Auth Failures](https://i.imgur.com/G1YgZt6.png)<br>
-![Windows RDP/SMB Auth Failures](https://i.imgur.com/ESr9Dlv.png)<br>
-
-## Metrics Before Hardening / Security Controls
-
-The following table shows the metrics we measured in our insecure environment for 24 hours:
-Start Time 2023-03-15 17:04:29
-Stop Time 2023-03-16 17:04:29
-
-| Metric                   | Count
-| ------------------------ | -----
-| SecurityEvent            | 19470
-| Syslog                   | 3028
-| SecurityAlert            | 10
-| SecurityIncident         | 348
-| AzureNetworkAnalytics_CL | 843
-
-## Attack Maps Before Hardening / Security Controls
-
-```All map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
-
-## Metrics After Hardening / Security Controls
-
-The following table shows the metrics we measured in our environment for another 24 hours, but after we have applied security controls:
-Start Time 2023-03-18 15:37
-Stop Time	2023-03-19 15:37
-
-| Metric                   | Count
-| ------------------------ | -----
-| SecurityEvent            | 8778
-| Syslog                   | 25
-| SecurityAlert            | 0
-| SecurityIncident         | 0
-| AzureNetworkAnalytics_CL | 0
-
-## Conclusion
+- Developed and implemented four distinct workbooks in Azure Sentinel that visualized various types of malicious global traffic.
+- Ensured accurate log ingestion through Sentinel by utilizing the integrated Log Analytics Workspace.
+- Verified and rectified logging configurations for Microsoft Defender for Cloud, SQL Server, and NSG Flow Logs.
 
 In this project, a mini honeynet was constructed in Microsoft Azure and log sources were integrated into a Log Analytics workspace. Microsoft Sentinel was employed to trigger alerts and create incidents based on the ingested logs. Additionally, metrics were measured in the insecure environment before security controls were applied, and then again after implementing security measures. It is noteworthy that the number of security events and incidents were drastically reduced after the security controls were applied, demonstrating their effectiveness.
 
