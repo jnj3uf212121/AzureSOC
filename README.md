@@ -42,7 +42,7 @@ In this endeavor, I meticulously constructed and monitored a network environment
 
 ## Metrics Before Hardening / Security Controls
 
-The following table shows the metrics we measured in our insecure environment for 24 hours:
+The following table shows the metrics we measured in our insecure environment for one week:
 Start Time 2023-10-20 7:55
 Stop Time 2023-03-16 7:55
 
@@ -56,7 +56,7 @@ Stop Time 2023-03-16 7:55
 
 ## Metrics After Hardening / Security Controls
 
-The following table shows the metrics we measured in our environment for another 24 hours, but after we have applied security controls:
+The following table shows the metrics we measured in our environment for another one week, but after we have applied security controls:
 Start Time 2023-10-28 8:55
 Stop Time	2023-11-03 8:55
 
