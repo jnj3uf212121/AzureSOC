@@ -39,3 +39,32 @@ In this endeavor, I meticulously constructed and monitored a network environment
 ![NSG Allowed Inbound Malicious Flows](https://drive.google.com/drive/u/0/my-drive)<br>
 ![Linux Syslog Auth Failures](https://drive.google.com/drive/u/0/my-drive)<br>
 ![Windows RDP/SMB Auth Failures](https://drive.google.com/drive/u/0/my-drive)<br>
+
+## Metrics Before Hardening / Security Controls
+
+The following table shows the metrics we measured in our insecure environment for 24 hours:
+Start Time 2023-10-20 7:55
+Stop Time 2023-03-16 17:04:29
+
+| Metric                   | Count
+| ------------------------ | -----
+| SecurityEvent            | 19818
+| Syslog                   | 6889
+| SecurityAlert            | 2
+| SecurityIncident         | 114
+| AzureNetworkAnalytics_CL | 5328
+
+## Metrics After Hardening / Security Controls
+
+The following table shows the metrics we measured in our environment for another 24 hours, but after we have applied security controls:
+Start Time 2023-03-18 15:37
+Stop Time	2023-03-19 15:37
+
+| Metric                   | Count
+| ------------------------ | -----
+| SecurityEvent            | 8500
+| Syslog                   | 50
+| SecurityAlert            | 0
+| SecurityIncident         | 0
+| AzureNetworkAnalytics_CL | 0
+                                                                              
