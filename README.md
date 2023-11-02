@@ -28,6 +28,11 @@ This project focused on constructing a mini honeynet within the Microsoft Azure 
 ![Architecture Diagram](https://i.imgur.com/YQNa9Pp.jpg)
 - The environment was fortified using NIST SP 800-53 Policy.
 
+## Attack Maps Before Hardening / Security Controls
+![NSG Allowed Inbound Malicious Flows](images/nsg.PNG)<br>
+![Linux Syslog Auth Failures](images/linux.PNG)<br>
+![Windows RDP/SMB Auth Failures](images/windows.PNG)<br>
+
 ## Metrics Before Hardening / Security Controls
 
 The following table shows the metrics we measured in our insecure environment for 24 hours:
