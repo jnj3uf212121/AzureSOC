@@ -36,9 +36,9 @@ In this endeavor, I meticulously constructed and monitored a network environment
 - Network Security Groups (NSGs)
 
 ## Attacks Maps created from Azure Sentinel Workbooks
-![NSG Allowed Inbound Malicious Flows](https://drive.google.com/file/d/1YixI7U31HTBjGYz96FeJTNEtbvoydx5C/view?usp=drive_link)<br>
-![Linux Syslog Auth Failures](https://drive.google.com/file/d/13hNBGkQuznV3z-tgUcr91ar4astqP5TS/view?usp=drive_link)<br>
-![Windows RDP/SMB Auth Failures](https://drive.google.com/file/d/1JQ3w5JlAyK2fmK0vPBlmkIsOaXViLnsN/view?usp=drive_link)<br>
+![NSG Allowed Inbound Malicious Flows](https://github.com/jnj3uf212121/images/blob/821268c33d0257d4bbf1d4caed508cfe23697895/nsg.PNG)<br>
+![Linux Syslog Auth Failures](https://github.com/jnj3uf212121/images/blob/821268c33d0257d4bbf1d4caed508cfe23697895/linux.PNG)<br>
+![Windows RDP/SMB Auth Failures](https://github.com/jnj3uf212121/images/blob/821268c33d0257d4bbf1d4caed508cfe23697895/windows.PNG)<br>
 
 ## Metrics Before Hardening / Security Controls
 
