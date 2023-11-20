@@ -14,11 +14,6 @@ In this endeavor, I meticulously constructed and monitored a network environment
 - Compliance and Standards: Emphasized adherence to NIST 800-61 for incident response and NIST 800-53 for establishing a robust cybersecurity framework within the environment.
 - Live Traffic Management: Successfully managed and analyzed live traffic within the environment, simulating a real SOC's experience.
 
-## Project Objectives
-- Educate: Serve as an educational resource for those looking to understand the intricacies of SOC operations and Honeynet deployment.
-- Demonstrate: Showcase the capabilities of Azure services in hosting and managing security operations.
-- Innovate: Provide a platform for continuous improvement and experimentation with new security methodologies and tools.
-
 ## Project Achievements
 - Established a realistic and secure virtual network environment.
 - Demonstrated the ability to capture and analyze live traffic.
