@@ -1,34 +1,83 @@
 # Building a SOC + Honeynet in Azure (Live Traffic)
 ![Cloud Honeynet / SOC](https://i.imgur.com/ZWxe03e.jpg)
 
-## Project Overview
-In this endeavor, I meticulously constructed and monitored a network environment that mimicked enterprise-level SOC operations, integrated with a Honeynet to capture and analyze malicious activities. The use of Azure's cloud capabilities allowed me to create a dynamic and scalable infrastructure that can handle live traffic and adapt to various attack scenarios.
+Lab Overview
+## 1. Infrastructure Setup
+Created two virtual machines (VMs): one Linux and one Windows.
+Exposed both VMs to the internet, forming a honeynet.
+Established virtual networks for each VM and grouped them in resource groups.
+Assigned both VMs to the same region.
+Configured Network Security Groups (NSGs) to permit all inbound internet traffic.
+Disabled the Windows VM firewall.
 
-## Key Features
-- Virtual Machine Configuration: Configured Linux and Windows VMs, adjusting security settings to monitor and respond to traffic appropriately.
-- Attack Simulation: Set up an Attack VM designed to launch simulated attacks on other VMs, creating an environment to study attack patterns and practice incident response.
-- Azure Active Directory Management: Explored Azure AD's structure, creating and managing users with diverse permission sets to understand the impact of administrative roles on security.
-- Centralized Logging: Leveraged Azure's Log Analytics Workspace for gathering and analyzing logs from all over the environment, providing a centralized point for security data.
-- Threat Detection with Azure Sentinel: Utilized Azure Sentinel as a SIEM system to create attack maps, generate and manage alerts, and investigate malicious activities.
-- Microsoft Defender for Cloud Integration: Ensured all security alerts from various sources were pushed into the Log Analytics Workspace for a unified threat management approach.
-- Compliance and Standards: Emphasized adherence to NIST 800-61 for incident response and NIST 800-53 for establishing a robust cybersecurity framework within the environment.
-- Live Traffic Management: Successfully managed and analyzed live traffic within the environment, simulating a real SOC's experience.
+## 2. Database and Logging Configuration
+Installed MS SQL Server and SQL Server Management Studio.
+Connected SQL logs to the Windows Event Manager.
 
-## Project Achievements
-- Established a realistic and secure virtual network environment.
-- Demonstrated the ability to capture and analyze live traffic.
-- Created and resolved simulated security incidents.
-- Developed a comprehensive understanding of SOC and Honeynet operations.
+## 3. Simulated Attack Environment
+Set up an additional VM to simulate attacks on the Windows VM, Linux VM, and SQL database.
+Analyzed attack logs in the Event Manager.
 
-## Tools and Technologies Used:
-- Azure Cloud Services
-- Virtual Machines (Windows and Linux)
-- Azure Active Directory
-- Azure Log Analytics
-- Azure Sentinel
-- Microsoft Defender for Cloud
-- Kusto Query Language (KQL)
-- Network Security Groups (NSGs)
+## 4. Azure Active Directory Management
+Reviewed Azure Active Directory components: tenant, subscription, and resource group.
+Created users with varied permissions for access level testing.
+
+## 5. Logging Mechanics
+Conducted a mini-lesson on logging across different system layers.
+
+## 6. Log Analytics and Sentinel Setup
+Established a Log Analytics workspace for centralized log aggregation.
+Integrated Azure Sentinel with the Log Analytics workspace.
+
+## 7. Security Alert Integration
+Enabled Microsoft Defender for Cloud to forward all security alerts from VMs and the SQL database to the Log Analytics workspace.
+
+## 8. Storage and Data Collection
+Created a storage account specifically for NSG flow logs.
+Configured data collection rules in the Log Analytics workspace, both manually and through cloud services.
+Tested KQL queries to ensure proper function.
+
+## 9. KQL Proficiency
+Deep dive into KQL, focusing on popular queries for log analysis.
+
+## 10. Azure Sentinel Analysis
+Utilized Azure Sentinel as a SIEM tool to:
+Create attack maps from imported logs.
+Simulate attack traffic from the attack VM.
+Set up alerts for malicious activities and handle incidents.
+Apply NIST 800-61 and NIST 800-53 standards for incident response and system hardening.
+Analyze the impact of security measures.
+
+## 11. Incident Response
+Followed NIST 800-61 guidelines for incident handling:
+Preparation: Ingested logs into the Log Analytics workspace.
+Detection and Analysis: Managed incident severity, status, and ownership.
+Containment, Eradication, and Recovery: Implemented a custom response playbook.
+Post-Incident Activity: Documented findings and closed incidents in Sentinel.
+
+## 12. Compliance and Security Posture
+Enabled NIST 800-53 compliance measures in Microsoft Defender for Cloud.
+Assessed the secure score in Microsoft Defender for Cloud.
+
+## 13. NIST 800-53 Implementation
+Focused on SC-7 (Boundary Protection):
+Applied NSGs to subnets.
+Enabled built-in firewalls and configured private links for public internet-facing resources.
+Reviewed network topology for accuracy.
+Additional Activities
+Tenant-Level Logging
+Tested user management at the tenant level.
+Analyzed logs using custom KQL queries.
+Subscription-Level Logging
+Managed resources at the subscription level.
+Observed changes through activity logs.
+Resource-Level Logging
+Enabled logging for a storage account and a key vault.
+Generated logs through user interactions with these resources.
+Security Alert Testing
+Set up and tested alerts for various security incidents like brute force attacks and malware downloads.
+Responded to incidents using NIST 800-61 guidelines.
+Updated NSG rules and re-enabled the Windows VM firewall for enhanced security.
 
 ## Attacks Maps created from Azure Sentinel Workbooks
 ![NSG Allowed Inbound Malicious Flows](https://github.com/jnj3uf212121/images/blob/821268c33d0257d4bbf1d4caed508cfe23697895/nsg.PNG)<br>
